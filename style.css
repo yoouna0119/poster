@@ -1,0 +1,73 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden; 
+  /* cursor: url(./img/cursor.png), auto !important; */
+}
+.cursor{
+    display: none;
+    width: 30px;
+    height: 30px;
+    background-color: sandybrown;
+    border-radius: 50%;
+    z-index: 99;
+    position: absolute;
+}
+
+.container, .water-bg {
+    background-image:  url('./img/bg.jpg');
+    /* background-position: center ; */
+}
+.water-bg{
+    max-width: 1920px;
+    height: 1080px;
+    background-size: cover;
+    /* background-attachment:fixed; */
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d; 
+    margin: 0 auto;
+    filter: url("#turbulence");
+    top: 0;
+    left: 0;
+}
+.move-person{
+    max-width: 340px;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(calc(-50% - 180px)) translateY(calc(-50% - 24px));
+}
+.person{
+    display: block;
+    max-width: 340px;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateZ(500px) perspective(2000px) rotateY(15deg) ;;
+    animation:move 2.8s ease-in-out infinite;
+   
+}
+@keyframes move {
+    0%{
+        transform:translateZ(500px) perspective(2000px) rotateY(15deg) ;
+    }
+    50%{
+        transform:translateZ(500px) perspective(2000px) rotateY(-20deg);
+        opacity: 0.3;
+    }
+    100%{
+        transform:translateZ(500px) perspective(2000px) rotateY(15deg);
+        
+    }
+}
+
+   
+    
