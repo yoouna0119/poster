@@ -19,7 +19,7 @@ $(document).ready(function() {
 
     $('.water-bg').ripples({
         resolution: 700,
-        dropRadius: 20, //px
+        dropRadius: 5, //px
         perturbance: 0.04,
     });
 
